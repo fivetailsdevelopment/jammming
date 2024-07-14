@@ -1,0 +1,11 @@
+
+.tracklist {
+    background-color: #323334;
+    color: #FAFAFA;
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px 4px #00000079;
+    height: 70vh;
+    min-width: 30vw;
+    max-width: 40vw;
+    padding: 10px;
+}
