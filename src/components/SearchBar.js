@@ -1,18 +1,25 @@
-import React from 'react';
+import '../App.css';
+import React, { useEffect, useState } from 'react';
 import './css/searchBar.css'
 
 function SearchBar({searchString, setSearchString}) {
-    
+    const [searchBarText, setSearchBarText] = useState("search")
+
     function handleSubmit(e) {
         e.preventDefault();
+        setSearchString(searchBarText);
     };
-    
+
+    const handleUserInput = ({target}) => {
+        return setSearchBarText(target.value)
+    };
+      
     function handleFocus(e) {
-        if (e.target.value ==='search') {setSearchString('')}
+        if (e.target.value ==='search') {setSearchBarText('')}
     }
 
     function handleBlur(e) {
-        if (e.target.value ==='') {setSearchString('search')}
+        if (e.target.value ==='') {setSearchBarText('search')}
     }
 
     return (
@@ -21,9 +28,9 @@ function SearchBar({searchString, setSearchString}) {
                 <form onSubmit={handleSubmit}>
                     <input className="searchBox"
                             id="searchString"
-                            value={searchString}
                             type="text"
-                            onChange={(e) => setSearchString(e.target.value)}
+                            value={searchBarText}
+                            onChange={handleUserInput}
                             onFocus={handleFocus}
                             onBlur={handleBlur}
                             />

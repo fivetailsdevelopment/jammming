@@ -10,8 +10,7 @@
     border-radius: 10px;
     box-shadow: 2px 2px 5px 4px #00000079;
     height: 70vh;
-    min-width: 30vw;
-    max-width: 40vw;
+    width: 30vw;
     padding: 10px;
     display: inline-flex;
 }
@@ -46,19 +45,21 @@
 }
 
 .button_SaveToSpotify {
-    border: 1px solid white;
+    /* border: 1px solid white; */
+    border: none;
     border-radius: 50px;
     outline: none;
     height:3rem;
     width: 200px;
     font-size: 1rem;
-    background-color: #3D0000;
+    background-color: #811616;
     color: #FAFAFA;
     cursor: pointer;
 }
 
 .button_SaveToSpotify:hover {
     outline: none;
-    background-color: #811616;
+    border: none;
+    background-color: #ee2d2d;
     color: #FAFAFA;
 }

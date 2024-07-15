@@ -1,18 +1,34 @@
-import logo from './logo.svg';
 import './App.css';
+import React, { useCallback, useEffect, useState } from 'react';
 import SearchBar from './components/SearchBar';
-import React, { useState } from 'react';
 import SearchResults from './components/SearchResults';
 import Playlist from './components/Playlist';
-import Tracklist from './components/Tracklist';
+
 
 function App() {
   const [searchString, setSearchString] = useState("search");
-  const [track, setTrack] = useState("");
-  const [playlist, setPlaylist] = useState([]);
-  const [playlistName, setPlaylistName] = useState([]);
-  const [tracklist, setTracklist] = useState([]);
-  const [searchResult, setSearchResult] = useState([]);
+  const [playlistName, setPlaylistName] = useState("New Playlist");
+  const [playlistTracks, setPlaylistTracks] = useState([]);
+
+  const addTrack = useCallback(
+    (track) => {
+      if (playlistTracks.some((savedTrack) => savedTrack.id === track.id))
+        return;
+
+    setPlaylistTracks((prevTracks) => [...prevTracks, track]);
+  },
+  [playlistTracks]
+);
+  
+  const removeTrack = useCallback((track) => {
+    setPlaylistTracks((prevTracks) =>
+    prevTracks.filter((currentTrack) => currentTrack.id !==track.id)
+  );
+  },[]);
+
+  const updatePlayListName = useCallback((name) => {
+    setPlaylistName(name);
+  }, []);
 
 
   return (
@@ -22,13 +38,16 @@ function App() {
         <SearchBar searchString={searchString} setSearchString={setSearchString}/>
       </div>
       <div>
-        <SearchResults searchResult={searchResult} setSearchResult={setSearchResult} searchString={searchString} track={track} setTrack={setTrack}/>
+        <SearchResults searchString={searchString} onAdd={addTrack}/>
       </div>
       <div>
-        <Tracklist tracklist={tracklist} setTracklist={setTracklist} track={track} setTrack={setTrack}/>
-      </div> 
-      <div>
-        <Playlist playlist={playlist} setPlaylist={setPlaylist} playlistName={playlistName} setPlaylistName={setPlaylistName} searchResult={searchResult} track={track} setTrack={setTrack}/>
+        <Playlist 
+          playlistName={playlistName}
+          playlistTracks={playlistTracks}
+          onNameChange={updatePlayListName}
+          onRemove={removeTrack}
+          listType="playlist"
+        />
       </div>
     </div>
     

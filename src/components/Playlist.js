@@ -1,7 +1,16 @@
-import React from 'react';
+import '../App.css';
+import React, { useState, useEffect, useCallback } from 'react';
 import './css/playlist.css'
+import Tracklist from './Tracklist';
 
 function Playlist(props) {
+
+    const handleNameChange = useCallback(
+        (event) => {
+          props.onNameChange(event.target.value);
+        },
+        [props.onNameChange]
+    );
 
     return (
         <div className="playlist">
@@ -10,18 +19,16 @@ function Playlist(props) {
                 <thead>
                     <tr>
                         <td className="input_box_cell">
-                        <input className="playlistTitleInput"
-                                type="text" id="playlistName"
-                                value={props.playlistName}
-                                onChange={(e) => props.setPlaylistName(e.target.value)}
-                                />
+                        <input className="playlistTitleInput" type="text" onChange={handleNameChange} defaultValue={"New Playlist"} />
                         </td>
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Tracks will go here</td>
-                    </tr>
+                    <Tracklist tracks={props.playlistTracks}
+                                isRemoval={true}
+                                onRemove={props.onRemove}
+                                listType="playlist"
+                                />
                 </tbody>
                 <tfoot>
                     <tr>
@@ -30,6 +37,7 @@ function Playlist(props) {
                 </tfoot>
             </table>
             </form>
+            
         </div>
     )
 }
