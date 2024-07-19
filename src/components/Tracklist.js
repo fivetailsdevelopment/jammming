@@ -2,32 +2,30 @@ import '../App.css';
 import React, { useState, useEffect, useCallback } from 'react';
 import Track from './Track';
 import './css/tracklist.css'
-import { SampleData } from './SampleData';
 
 function Tracklist(props) {
+
 
     if (props.listType === 'searchlist') {
     return (
         <table className="trackList_table">
             <tbody>
-                {props.searchList!== undefined && props.searchList.map((track) => {
-
-                    return (
-                    <Track
-                    track={track}
-                    songName={track.name}
+            {props.spotifyTrackList.length > 0 && props.spotifyTrackList.map((track) => {
+                return (
+                    <Track 
                     id={track.id}
+                    uri={track.uri}
+                    trackname={track.trackname}
                     artist={track.artist}
                     album={track.album}
-                    key={track.id}
+                    track={track}
                     onAdd={props.onAdd}
-                    onRemove={props.remove}
-                    isRemoval={props.isRemoval}
-                        />
-                    )}
-                )}
+                    />
 
-                {props.searchList === undefined && <Track />}
+                )
+            }
+            )}
+                {props.spotifyTrackList <= 0 && <Track />}
 
             </tbody>
         </table>
@@ -36,22 +34,22 @@ function Tracklist(props) {
     return (
         <table className="trackList_table">
             <tbody>
-                {props.tracks!== undefined && props.tracks.map((track) => {
+                {props.checkPlaylistTracks > 0 && props.tracks.map((track) => {
                     return (
                     <Track
-                    track={track}
-                    key={track.id}
                     id={track.id}
-                    songName={track.name}
+                    uri={track.uri}
+                    trackname={track.trackname}
                     artist={track.artist}
                     album={track.album}
+                    track={track}
                     onRemove={props.onRemove}
                     isRemoval={props.isRemoval}
                         />
                     )}
                 )}
                 
-                {props.tracks === undefined && <Track />}
+                {props.checkPlaylistTracks <= 0 && <></>}
             </tbody>
         </table>
 

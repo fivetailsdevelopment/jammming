@@ -6,5 +6,40 @@
     box-shadow: 2px 2px 5px 4px #00000079;
     height: 70vh;
     width: 30vw;
+    min-width: 400px;
     padding: 10px;
+}
+
+.tracklist_container {
+    width: 100%;
+    height: 70vh;
+    overflow-y: auto;
+
+}
+
+::-webkit-scrollbar {
+    background: #FAFAFA;
+    border-radius: 10px;
+    width: 20px;
+    
+}
+
+::-webkit-scrollbar-thumb {
+    background-color:#f70505;
+    border: 2px solid #FAFAFA;
+    border-radius: 10px;
+}
+
+.scrollenable::-webkit-scrollbar-button {
+    width: 0px;
+}
+
+.permissions_list ul {
+    margin: 0;
+    padding-inline-start: 20px;
+}
+
+.permissions_list ul li {
+    margin-bottom: 10px;
+
 }

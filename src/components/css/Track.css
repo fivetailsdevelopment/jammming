@@ -36,7 +36,15 @@
 
 .add_or_remove_button {
     align-content: center;
-    cursor: pointer;
     margin-right: 10px;
     font-weight: 700;
+}
+
+.Track-action {
+    background-color: transparent;
+    color:#FAFAFA;
+    font-size: 1.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }

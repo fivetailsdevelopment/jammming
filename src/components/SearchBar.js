@@ -1,14 +1,15 @@
 import '../App.css';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import './css/searchBar.css'
 
-function SearchBar({searchString, setSearchString}) {
+function SearchBar(props) {
     const [searchBarText, setSearchBarText] = useState("search")
 
-    function handleSubmit(e) {
-        e.preventDefault();
-        setSearchString(searchBarText);
-    };
+    const handleSubmit = useCallback(
+        (e) => {
+            e.preventDefault();
+            props.onNewSearch(searchBarText);
+        });
 
     const handleUserInput = ({target}) => {
         return setSearchBarText(target.value)
@@ -24,7 +25,7 @@ function SearchBar({searchString, setSearchString}) {
 
     return (
         <>
-            <div className="search-bar">
+            <div className="search-bar_block">
                 <form onSubmit={handleSubmit}>
                     <input className="searchBox"
                             id="searchString"

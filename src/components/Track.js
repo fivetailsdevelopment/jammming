@@ -5,17 +5,18 @@ function Track(props) {
 
     const addTrack = useCallback(
         (e) => {
-            props.onAdd(props.track);
+        props.onAdd(props);
         },
-        [props.onAdd, props.track]
+        [props.track]
     );
 
 
     const removeTrack = useCallback(
         (e) => {
+            e.preventDefault();
             props.onRemove(props.track);
         },
-        [props.onRemove, props.track]
+        [props.track]
     )
 
     const renderAction = () => {
@@ -38,7 +39,7 @@ function Track(props) {
         <tr className='track_row'>
             <td className="track_box">
                 <div className="song_info">
-                    <h2 className="trackTitle">{props.songName}</h2>
+                    <h2 className="trackTitle">{props.trackname}</h2>
                     <h3 className="trackArtist">{props.artist} | {props.album}</h3>
                 </div>
                 <div className="add_or_remove_button">

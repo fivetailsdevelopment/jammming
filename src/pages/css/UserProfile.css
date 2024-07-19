@@ -1,0 +1,126 @@
+.UserProfilePage {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile_box {
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile_image_box, .profile_details_box {
+    min-width: 400px;
+}
+
+.profile_image_box {
+    height: 40vh;
+    max-height: 500px;
+    width: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #811616;
+    border-top-left-radius: 2%;
+    border-top-right-radius: 2%;
+    box-shadow: 2px -2px 5px 4px #00000079;
+}
+
+.profile_image_box h1 {
+    color: #FAFAFA;
+}
+
+.profileImage_container {
+    height: 150px;
+    width: 150px;
+    display: flex;
+    overflow: hidden;
+    border-radius: 50%;
+    align-items: center;
+    border: 2px solid #FAFAFA;
+    margin-bottom: 15px;
+}
+
+.profileImage {
+    min-width: 0;
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.name_box {
+    display: inline-flex;
+    gap: 10px;
+    align-content: center;
+    align-items: center;
+
+}
+
+.name_box button {
+    background-image: url('../../assets/logout.png');
+    background-size: contain;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    height: 40px;
+    width: 40px;
+    cursor: pointer;
+}
+
+.profile_details_box {
+    height: 45vh;
+    max-height: 500px;
+    width: 30%;
+    display: inline-flex;
+    justify-content: center;
+    background-color: #FAFAFA;
+    border-bottom-left-radius: 2%;
+    border-bottom-right-radius: 2%;
+    box-shadow: 2px 8px 5px 4px #00000079;
+}
+
+.profile_details_box table{
+    height:fit-content;
+    margin-top: 3vh;
+}
+
+.profile_details_box table tr td {
+    text-align: left;
+    padding: 20px;
+}
+
+.profile_field_headings {
+    font-weight: 700;
+    vertical-align: top;
+}
+
+.permissions_list {
+
+}
+
+.timedOut_Message {
+    color: #FAFAFA;
+    font-size: 1.2rem;
+}
+
+.login_logout_button {
+    background-color: #811616;
+    color: #FAFAFA;
+    font-size: 18px;
+    font-weight: 700;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 150px;
+    border-radius: 25px;
+    box-shadow: 2px 0px 5px 4px #00000079;
+    cursor: pointer;
+}
+
+.login_Message {
+    color: #FAFAFA;
+}

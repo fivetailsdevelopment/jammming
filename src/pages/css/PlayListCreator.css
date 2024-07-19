@@ -1,0 +1,25 @@
+.playlistCreator_component {
+    display: inline-flex;
+    flex-direction: row;
+    width:100%;
+    flex-wrap: wrap;
+}
+
+.playlistBody {
+    display:inline-flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: space-around;
+}
+
+.searchBar_div {
+    width: 100%;
+    height: 10vh;
+}
+
+.searchResults_div, .playlist_div {
+    min-width: 400px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
