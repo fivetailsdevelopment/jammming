@@ -5,8 +5,8 @@ const Login = () => {
 
 // Spotify API Configuration
 
-const client_id = 'aa85065cd2354d9f8448fd150ef37e34'; // Replace with your actual client id
-const client_secret = '20758d80dbe643beb3725174025118c6'; // Replace with your actual client secret
+const client_id = '**************'; // Replace with your actual client id
+const client_secret = '***************'; // Replace with your actual client secret
 const grant_type = 'client_credentials';
 const url = 'https://accounts.spotify.com/api/token';
 const body = `grant_type=${grant_type}&client_id=${client_id}&client_secret=${client_secret}`;
