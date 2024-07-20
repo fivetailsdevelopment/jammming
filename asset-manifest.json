@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/jammming/static/css/main.c9c4c044.css",
-    "main.js": "/jammming/static/js/main.705dbe85.js",
+    "main.js": "/jammming/static/js/main.efeba922.js",
     "static/js/453.a69270cd.chunk.js": "/jammming/static/js/453.a69270cd.chunk.js",
     "static/media/five_tails_logo_crimson.png": "/jammming/static/media/five_tails_logo_crimson.3141553ff7aff285a189.png",
     "index.html": "/jammming/index.html",
     "main.c9c4c044.css.map": "/jammming/static/css/main.c9c4c044.css.map",
-    "main.705dbe85.js.map": "/jammming/static/js/main.705dbe85.js.map",
+    "main.efeba922.js.map": "/jammming/static/js/main.efeba922.js.map",
     "453.a69270cd.chunk.js.map": "/jammming/static/js/453.a69270cd.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9c4c044.css",
-    "static/js/main.705dbe85.js"
+    "static/js/main.efeba922.js"
   ]
 }
