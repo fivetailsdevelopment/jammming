@@ -12,7 +12,8 @@ const Callback = (props) => {
     if (code) {
       const client_id = 'aa85065cd2354d9f8448fd150ef37e34'; // Replace with your actual client id
       const client_secret = '20758d80dbe643beb3725174025118c6'; // Replace with your actual client secret
-      const redirect_uri = 'http://localhost:3000/callback'; // Replace with your actual redirect URI
+      const redirect_uri = 'https://fivetailsdevelopment.github.io/jammming/callback'; // Replace with your actual redirect URI
+      // const redirect_uri = 'http://localhost:3000/callback'; // Replace with your actual redirect URI
 
       const fetchToken = async () => {
         try {

@@ -1,17 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import querystring from 'querystring';
+import { useHistory } from 'react-router-dom';
 
 const Login = () => {
 
 // Spotify API Configuration
 
-const client_id = '**************'; // Replace with your actual client id
-const client_secret = '***************'; // Replace with your actual client secret
-const grant_type = 'client_credentials';
-const url = 'https://accounts.spotify.com/api/token';
-const body = `grant_type=${grant_type}&client_id=${client_id}&client_secret=${client_secret}`;
+const client_id = 'aa85065cd2354d9f8448fd150ef37e34'; // Replace with your actual client id
+// const client_secret = '20758d80dbe643beb3725174025118c6'; // Replace with your actual client secret
+// const grant_type = 'client_credentials';
+// const url = 'https://accounts.spotify.com/api/token';
+// const body = `grant_type=${grant_type}&client_id=${client_id}&client_secret=${client_secret}`;
 
-  const redirect_uri = 'http://localhost:3000/callback'; // Replace with your actual redirect URI
+  const redirect_uri = 'https://fivetailsdevelopment.github.io/jammming/callback'; // Replace with your actual redirect URI
+  // const redirect_uri = 'http://localhost:3000/callback'; // Replace with your actual redirect URI
   const scope = 'user-read-private user-read-email playlist-modify-private playlist-modify-public';
 
   const generateRandomString = length => {

@@ -12,8 +12,8 @@ function UserSetup(props) {
             <Router>
                 <Routes>
                     <Route path="/jammming" element={<Login />} />
-                    <Route path="/Callback" element={<Callback onNewToken={props.onNewToken} />} />
-                    <Route path="/Profile" element={<Profile onNewToken={props.onNewToken} callProfileImage={props.callProfileImage} />} />
+                    <Route path="/jammming/Callback" element={<Callback onNewToken={props.onNewToken} />} />
+                    <Route path="/jammming/Profile" element={<Profile onNewToken={props.onNewToken} callProfileImage={props.callProfileImage} />} />
                 </Routes>
             </Router>
             {/* <HashRouter>

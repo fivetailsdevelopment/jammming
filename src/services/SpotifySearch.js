@@ -1,5 +1,3 @@
-import React, { useState } from 'react';
-
 const SpotifySearch = async (searchString, token, updateSearchResults, createSpotifyTrackList, logError) => {
 
     const endpoint = 'https://api.spotify.com/v1/search?'
