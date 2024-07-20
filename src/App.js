@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useCallback, useEffect, useState, useRef } from 'react';
+import React, { useCallback, useState } from 'react';
 import UserProfile from './pages/UserProfile';
 import PlayListCreator from './pages/PlayListCreator';
 import no_profile_image from './assets/no_profile_image.png';

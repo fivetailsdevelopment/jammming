@@ -15,7 +15,7 @@ const Profile = (props) => {
 
   const logout = () => {
     localStorage.removeItem('spotify_access_token');
-    window.location.href = '/';
+    window.location.href = '/jammming';
   };
 
   useEffect(() => {
